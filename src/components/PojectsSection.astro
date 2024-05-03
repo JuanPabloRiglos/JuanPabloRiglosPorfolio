@@ -1,0 +1,11 @@
+---
+import  projects  from "../mocs/projects";
+console.log(projects);
+import ProjectCard from "./ProjectCard.astro"
+---
+
+{
+    projects?.map(project =>{
+        return ( <ProjectCard project={project}/> )
+    })
+} 
