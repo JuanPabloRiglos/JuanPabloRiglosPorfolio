@@ -5,11 +5,12 @@ import SectionContainer from '../components/SectionContainer.astro';
 import RuteIcon from '../icons/RuteIcon.astro';
 import DesktopIcon from '../icons/DesktopIcon.astro'
 import Layout from '../layouts/Layout.astro';
+import AboutMe from '../components/AboutMe.astro';
 ---
 
 <Layout title=" Juan Pablo Riglos, Desarrollador y Programador web 🚀"
 description="Bienvenidos a mi porfolio, soy Juan Pablo Riglos, Frontend developer con mas de 3 años de experiencia, hecha un vistazo a mis trabajos previos y no dudes en contactarme.">
-	<main>
+	<main class="mt-24 sm:mt-64 lg:mt-44">
 	<SectionContainer id="top">
 	<header class="">  
 	<h1 class=" font-bold text-3xl">Bienvenidos, soy <span class="hover:cursor-pointer hover:text-[rgb(79,158,238)]"  > <a href="https://www.linkedin.com/in/juanpabloriglos/" target="_blank" >Juan Pablo Riglos</a> 
@@ -36,6 +37,10 @@ description="Bienvenidos a mi porfolio, soy Juan Pablo Riglos, Frontend develope
 			<DesktopIcon class="size-10"/>
 		</header>
 		<PojectsSection/>
+	</SectionContainer>
+
+	<SectionContainer id="about">
+		<AboutMe/>
 	</SectionContainer>
 	</main>
 </Layout>
