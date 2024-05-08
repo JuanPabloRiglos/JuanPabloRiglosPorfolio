@@ -10,9 +10,9 @@ import AboutMe from '../components/AboutMe.astro';
 
 <Layout title=" Juan Pablo Riglos, Desarrollador y Programador web 🚀"
 description="Bienvenidos a mi porfolio, soy Juan Pablo Riglos, Frontend developer con mas de 3 años de experiencia, hecha un vistazo a mis trabajos previos y no dudes en contactarme.">
-	<main class="mt-24 sm:mt-64 lg:mt-44">
+	<main class="mt-24 sm:mt-64 sm:border md:border-0 lg:mt-44">
 	<SectionContainer id="top">
-	<header class="">  
+	<header class="z-40">  
 	<h1 class=" font-bold text-3xl">Bienvenidos, soy <span class="hover:cursor-pointer hover:text-[rgb(79,158,238)]"  > <a href="https://www.linkedin.com/in/juanpabloriglos/" target="_blank" >Juan Pablo Riglos</a> 
 	</span>
 	<br> 
@@ -23,7 +23,7 @@ description="Bienvenidos a mi porfolio, soy Juan Pablo Riglos, Frontend develope
 </article>
 	</SectionContainer>
 	<SectionContainer id="experiencia">
-		<header class="flex flex-nowrap gap-4"> 
+		<header class="flex flex-nowrap gap-4 z-40"> 
 			<h2 class="mb-8 text-gray-200/90 font-semibold text-xl text-pretty"> Experiencia 
 			</h2>
 			<RuteIcon/>
@@ -32,7 +32,7 @@ description="Bienvenidos a mi porfolio, soy Juan Pablo Riglos, Frontend develope
 	</SectionContainer>
 
 	<SectionContainer id="proyectos">
-		<header class="flex flex-nowrap gap-4">
+		<header class="flex flex-nowrap gap-4 z-40">
 			<h2 class="mb-8 text-gray-200/90 font-semibold text-xl text-pretty"> Proyectos </h2>
 			<DesktopIcon class="size-10"/>
 		</header>
@@ -42,6 +42,14 @@ description="Bienvenidos a mi porfolio, soy Juan Pablo Riglos, Frontend develope
 	<SectionContainer id="about">
 		<AboutMe/>
 	</SectionContainer>
+
+	<SectionContainer id="contact">
+		<header class="flex flex-nowrap gap-4 z-40"> 
+			<h2 class="mb-8 text-gray-200/90 font-semibold text-xl text-pretty">
+				HAcer una animacion y dspues hacer otra animacion, a mano 
+		</header>
+	</SectionContainer>
+	
 	</main>
 </Layout>
 

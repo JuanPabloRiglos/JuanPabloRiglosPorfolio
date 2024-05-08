@@ -2,8 +2,10 @@
 const {id}= Astro.props
 ---
 
-<section id={id}  class="
+<section id={id} 
+class="
+z-30
 w-full flex flex-col 
-mt-10 lg:mt-0 px-10 py-12 lg:px-[20%] lg:py-32">
+mt-10 lg:mt-0 px-10 py-12 lg:px-[20%] md:py-20 lg:py-32">
     <slot/>
 </section>
