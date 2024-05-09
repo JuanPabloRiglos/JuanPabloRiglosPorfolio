@@ -1,13 +1,17 @@
 ---
 const {project} = Astro.props
 console.log(project);
+
 //iconos
-import TailwindIcon from "../icons/TecnologiesIcons/TailwindIcon.astro";
 import ReactJSIcon from "../icons/TecnologiesIcons/ReactJSIcon.astro";
-import ReactQueryIcon from "../icons/TecnologiesIcons/ReactQueryIcon.astro";
 import JavascriptIcon from "../icons/TecnologiesIcons/JavascriptIcon.astro";
-import ViteIcon from "../icons/TecnologiesIcons/ViteIcon.astro"
-import Mongo from "../icons/TecnologiesIcons/Mongo.astro";
+import MongoIcon from "../icons/TecnologiesIcons/MongoIcon.astro";
+import ReactQueryIcon from "../icons/TecnologiesIcons/ReactQueryIcon.astro";
+import ReactRouterIcon from "../icons/TecnologiesIcons/ReactRouterIcon.astro";
+import StyleComponentsIcon from "../icons/TecnologiesIcons/StyleComponentsIcon.astro";
+import TailwindIcon from "../icons/TecnologiesIcons/TailwindIcon.astro";
+import ViteIcon from "../icons/TecnologiesIcons/ViteIcon.astro";
+
 ---
 <div class="principalDiv border-gray-300 mb-4 rounded-xl hover:bg-gray-700 hover:cursor-pointer
 w-full flex flex-col p-2
@@ -20,19 +24,24 @@ lg:w-full lg:mb-6">
         <div class="sm:w-[90%] m-auto pl-2 flex items-center flex-wrap md:flex-col
         border-2 p-2 rounded-xl bg-slate-200/80">
             <h3 class=" text-gray-900 font-semibold">Tecnologias utilizadas </h3>
-            <article class="flex gap-2 p-2 ">
-                <TailwindIcon class="size-6"/>
-                <ReactJSIcon class="size-6"/>
-                <ReactQueryIcon class="size-6"/>
-                <JavascriptIcon class="size-6"/>
-                <ViteIcon class="size-6"/>
-                <Mongo class="size-6"/>
+            <article class="flex gap-2 p-2">
+                
+                { project.tags.includes("ReactJSIcon") && <ReactJSIcon class="size-6" />}
+                { project.tags.includes("JavascriptIcon") && <JavascriptIcon class="size-6" />}
+                { project.tags.includes("MongoIcon") && <MongoIcon class="size-6" />}
+                { project.tags.includes("ReactQueryIcon") && <ReactQueryIcon class="size-6" />}
+                { project.tags.includes("ReactRouterIcon") && <ReactRouterIcon class="size-6" />}
+                { project.tags.includes("StyleComponentsIcon") && <StyleComponentsIcon class="size-6" />}
+                { project.tags.includes("TailwindIcon") && <TailwindIcon class="size-6" />}
+                { project.tags.includes("ViteIcon") && <ViteIcon class="size-6" />}
+  
             </article>
          
         </div>
         <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-orange-500 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-purple-800">
             <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-900 rounded-md group-hover:bg-opacity-0">
-           Conoce más de este proyecto
+                <a href={`/project/${project.id}`}>        Conoce más de este proyecto</a>
+   
             </span>
         </button>
     </section>
