@@ -1,3 +1,8 @@
 {
-  "extends": "astro/tsconfigs/strict"
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "jsx": "react", // Esto indica que estás utilizando JSX con React
+    "esModuleInterop": true, // Esto es necesario si estás importando módulos de CommonJS (por ejemplo, React) en archivos TypeScript
+    "resolveJsonModule": true // Esto te permite importar archivos JSON directamente en tu código TypeScript
+  }
 }
