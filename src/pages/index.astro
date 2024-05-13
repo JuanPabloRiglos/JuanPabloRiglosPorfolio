@@ -7,7 +7,7 @@ import RuteIcon from '../icons/RuteIcon.astro';
 import DesktopIcon from '../icons/DesktopIcon.astro'
 import Layout from '../layouts/Layout.astro';
 import AboutMe from '../components/AboutMe.astro';
-import Contact from '../components/Contact.astro'
+import {Contact} from '../components/Contact.jsx'
 ---
 
 <Layout title=" Juan Pablo Riglos, Desarrollador y Programador web 🚀"
@@ -38,7 +38,7 @@ description="Bienvenidos a mi porfolio, soy Juan Pablo Riglos, Frontend develope
 	</SectionContainer>
 
 	<SectionContainer id="contact">
-		<Contact/>
+		<Contact client:visible/>
 	</SectionContainer>
 	</main>
 </Layout>
