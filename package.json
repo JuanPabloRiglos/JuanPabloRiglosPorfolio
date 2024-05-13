@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "deploy": "gh-pages -d dist",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
@@ -22,5 +23,8 @@
   },
   "pnpm": {
     "version": "9.0.6"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }
