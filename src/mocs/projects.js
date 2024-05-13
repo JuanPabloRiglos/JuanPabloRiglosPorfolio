@@ -6,8 +6,8 @@ const projects = [
 			"Esta aplicacion me llena de orgullo, si bien le falta mucho diseño para que pueda ser bonita, lo cierto es que surgio de una necesidad y pudo satisfacer a la misma.",
 		bigDescription:
 			"Esta aplicacion me llena de orgullo, si bien le falta mucho diseño para que pueda ser bonita, lo cierto es que surgio de una necesidad y pudo satisfacer a la misma. Soy un consumidor constante de videos de you tube, y en cuanto a herramienta de estudio, me vi en la necesidad de poder guardar videos, y dejarme algunos comentarios. A eso le sume la posibilidad de de guardarlos en distintas listas de reproduccion, de editarlos, borrarlos y hasta la posibilidiad de logearte, y seguir a otros usuarios en una etapa ya posterior. ",
-		link: "https://www.ejemplo.com/proyecto-htmlx",
-		github: "https://github.com/ejemplo/proyecto-htmlx",
+		link: "",
+		github: "https://github.com/JuanPabloRiglos/VideoLibrary",
 		tags: [
 			"ReactJSIcon",
 			"ReactQueryIcon",
