@@ -22,7 +22,7 @@
     "typescript": "^5.4.5"
   },
   "pnpm": {
-    "version": "9.0.6"
+    "version": "9.1.1"
   },
   "devDependencies": {
     "gh-pages": "^6.1.1"
