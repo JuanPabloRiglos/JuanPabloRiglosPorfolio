@@ -54,7 +54,7 @@ export function HeaderFunction() {
 					href='#about'
 				>
 					{" "}
-					<span className='flex flex-nowrap'>Sobre mi </span>{" "}
+					<span className='flex flex-nowrap'>Sobre Mí </span>{" "}
 				</a>
 				<a
 					className=' text-gray-500/90 text-base hover:cursor-pointer hover:text-orange-500  border-b-trasnparent hover:border-b ease-in duration-600 transition-all'

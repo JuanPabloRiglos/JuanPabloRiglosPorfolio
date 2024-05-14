@@ -55,7 +55,7 @@ export function Contact() {
 						type='email'
 						id='email'
 						class=' border  text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500 shadow-sm-light'
-						placeholder='name@flowbite.com'
+						placeholder='invitadoRealmenteAsombrado@gmail.com'
 						required
 					/>
 				</div>
@@ -71,7 +71,7 @@ export function Contact() {
 						type='text'
 						id='subject'
 						class='block p-3 w-full text-sm  rounded-lg border  bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500 shadow-sm-light'
-						placeholder='Let us know how we can help you'
+						placeholder='Déjame saber como puedo ayudarte'
 						required
 					/>
 				</div>
@@ -80,7 +80,7 @@ export function Contact() {
 						for='body'
 						class='block mb-2 text-sm font-medium text-gray-400'
 					>
-						Deja tu mensaje aqui.
+						Deja tu mensaje aquí.
 					</label>
 					<textarea
 						onChange={insertDataDebounced}
@@ -93,7 +93,7 @@ export function Contact() {
 				</div>
 				<button class='relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-orange-500 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-purple-800'>
 					<span class='relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-900 rounded-md group-hover:bg-opacity-0'>
-						Enviame tu mensaje!
+						Envíame tu mensaje!
 					</span>
 				</button>
 			</form>
