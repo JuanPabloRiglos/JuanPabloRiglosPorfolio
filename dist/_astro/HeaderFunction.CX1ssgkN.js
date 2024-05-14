@@ -1,8 +1,8 @@
-import{j as e}from"./jsx-runtime.7faW4zRM.js";import{r as t}from"./index.DhYZZe0J.js";/* empty css                       */function i(){const[r,s]=t.useState(!1);return console.log(r),e.jsxs("header",{className:` flex flex-col justify-center items-center transition-all duration-500\r
+import{j as e}from"./jsx-runtime.7faW4zRM.js";import{r as s}from"./index.DhYZZe0J.js";/* empty css                       */function i(){const[r,t]=s.useState(!1);return console.log(r),e.jsxs("header",{className:` flex flex-col justify-center items-center transition-all duration-500\r
  sm:flex-row sm:justify-between sm:p-0\r
  lg:ml-5 mt-3`,children:[e.jsx("div",{className:`animate-border-colors  mb-3 border-2   border-transparent rounded-full overflow-hidden flex items-center justify-center
  sm:mb-0 sm:fixed sm:top-5 sm:left-5 sm:bg-zinc-900/90 z-10 sm:border-0 
- `,children:e.jsx("img",{className:"hover:cursor-pointer",src:"/misimagenes/navImgDegradeByN.png",alt:"",onClick:()=>s(!r)})}),e.jsxs("nav",{className:`z-50 w-1/2
+ `,children:e.jsx("img",{className:"hover:cursor-pointer",src:"/misimagenes/navImgDegradeByN.png",alt:"",onClick:()=>t(!r)})}),e.jsxs("span",{className:`-mt-2 sm:hidden ${r?"hidden ":"flex "}text-gray-500/90 text-base hover:text-orange-500  border-b border-transparent hover:border-gray-500 ease-in duration-600 transition-all`,children:[" ","Menu"," "]}),e.jsxs("nav",{className:`z-50 w-1/2
 
     ${r?"flex ":"hidden "}flex-col gap-4 items-center  
     sm:w-auto sm:flex sm:flex-row sm:gap-6 sm:h-fit sm:rounded-s-3xl sm:p-3 sm:pl-6 sm:fixed sm:top-5 sm:right-0 sm:bg-zinc-900/90

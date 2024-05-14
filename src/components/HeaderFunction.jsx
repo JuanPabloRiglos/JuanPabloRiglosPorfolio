@@ -21,7 +21,14 @@ export function HeaderFunction() {
 					onClick={() => setViewNav(!viewNav)}
 				/>
 			</div>
-
+			<span
+				className={`-mt-2 sm:hidden ${
+					viewNav ? "hidden " : "flex "
+				}text-gray-500/90 text-base hover:text-orange-500  border-b border-transparent hover:border-gray-500 ease-in duration-600 transition-all`}
+			>
+				{" "}
+				Menu{" "}
+			</span>
 			<nav
 				className={`z-50 w-1/2
 
