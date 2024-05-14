@@ -14,8 +14,11 @@
     80% {
       border-color: transparent;
     }
-    100% {
+    90% {
       border-color: orange;
+    }
+    100% {
+        border-color: transparent;
     }
   }
   

@@ -10,8 +10,8 @@ export function HeaderFunction() {
  lg:ml-5 mt-3'
 		>
 			<div
-				className={`mb-3 border-2 p-4  border-transparent animate-border-colors  rounded-full overflow-hidden flex items-center justify-center
- sm:mb-0 sm:fixed sm:top-5 sm:left-5 sm:bg-zinc-900/90 z-10
+				className={`animate-border-colors  mb-3 border-2   border-transparent rounded-full overflow-hidden flex items-center justify-center
+ sm:mb-0 sm:fixed sm:top-5 sm:left-5 sm:bg-zinc-900/90 z-10 sm:border-0 
  `}
 			>
 				<img
