@@ -1,0 +1,26 @@
+@keyframes changeBorderColor {
+    0% {
+      border-color: transparent;
+    }
+    20% {
+      border-color: orange;
+    }
+    40% {
+      border-color: transparent;
+    }
+    60% {
+      border-color: orange;
+    }
+    80% {
+      border-color: transparent;
+    }
+    100% {
+      border-color: orange;
+    }
+  }
+  
+  .animate-border-colors {
+    animation: changeBorderColor 8s ;
+  }
+  
+  
