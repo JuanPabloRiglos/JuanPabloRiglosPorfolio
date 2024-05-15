@@ -55,7 +55,7 @@ export function HeaderFunction() {
 					href='#proyectos'
 				>
 					{" "}
-					Poyectos{" "}
+					Proyectos{" "}
 				</a>
 				<a
 					className=' text-gray-500/90 text-base hover:cursor-pointer hover:text-orange-500  border-b-trasnparent hover:border-b ease-in duration-600 transition-all'
