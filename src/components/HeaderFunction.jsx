@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./HeaderFunction.css";
 export function HeaderFunction() {
 	const [viewNav, setViewNav] = useState(false);
-	console.log(viewNav);
+
 	return (
 		<header
 			className=' flex flex-col justify-center items-center transition-all duration-500

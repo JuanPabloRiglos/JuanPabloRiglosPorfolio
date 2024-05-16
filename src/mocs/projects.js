@@ -1,11 +1,25 @@
 const projects = [
 	{
+		id: 4,
+		title: "InnovateProWeb",
+		description:
+			"El proyecto en este caso es una página web de 3 secciones, totalmente responsiva, con interacción y posibilidad de contactar con los representantes de la misma por medio de WhatsApp.",
+		bigDescription:
+			"InnovateProWeb es una startup que lleva algún tiempo en el mercado y de la cual no hace mucho que formo parte. Dentro de la misma surgió la necesidad de crear una página a los fines de poder mostrar un poco más los proyectos realizados y las opciones de planes y de contactos. El proyecto en este caso es una página web de 3 secciones, totalmente responsiva, con interacción y posibilidad de contactar con los representantes de la misma por medio de WhatsApp .",
+		link: "",
+		github: "https://github.com/JuanPabloRiglos/InnoveProWebSite",
+		tags: ["ReactJSIcon", "ViteIcon", "ReactRouterIcon", "TailwindIcon"],
+		img: "/projectsImgs/IPWdosTablets.png",
+		subtitle:
+			"Página web de 3 secciones, realizada para una startup a los fines de mostrar el trabajo que hacen y facilitar el contacto de la misma con sus clientes .",
+	},
+	{
 		id: 3,
 		title: "MyLibrary App",
 		description:
 			"Esta aplicación me llena de orgullo, si bien le falta mucho diseño para que pueda ser bonita, lo cierto es que surgió de una necesidad y pudo satisfacer a la misma.",
 		bigDescription:
-			"Esta aplicación me llena de orgullo, si bien le falta mucho diseño para que pueda ser bonita, lo cierto es que surgió de una necesidad y pudo satisfacer a la misma. Soy un consumidor constante de videos de you tube, y en cuanto a herramienta de estudio, me vi en la necesidad de poder guardar videos, y dejarme algunos comentarios. A eso le sume la posibilidad de guardarlos en distintas listas de reproducción, de editarlos, borrarlos y hasta la posibilidad de loguearte, y seguir a otros usuarios en una etapa ya posterior. ",
+			"Esta aplicación me llena de orgullo, más allá de faltarle mucho diseño para que pueda ser bonita, lo cierto es que surgió de una necesidad y pudo satisfacer a la misma. Soy un consumidor constante de videos de you tube, y en cuanto a herramienta de estudio, me vi en la necesidad de poder guardar videos, y dejarme algunos comentarios. A eso le sume la posibilidad de guardarlos en distintas listas de reproducción, de editarlos, borrarlos y hasta la posibilidad de loguearte, y seguir a otros usuarios en una etapa ya posterior. ",
 		link: "",
 		github: "https://github.com/JuanPabloRiglos/VideoLibrary",
 		tags: [
