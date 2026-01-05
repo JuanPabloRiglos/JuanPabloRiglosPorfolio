@@ -16,7 +16,10 @@
 	</div>
 	<div class="content-wrapper">
 		<p class="text-base md:text-lg font-normal text-gray-500 dark:text-gray-400 text-pretty max-w-3xl lg:max-w-5xl xl:max-w-6xl leading-relaxed">
-			Estoy cursando el último año de la Tecnicatura en Desarrollo de Software en Teclab, consolidando bases teóricas que complementan mi experiencia práctica. En paralelo, estoy orientando mi perfil hacia la implementación de inteligencia artificial en proyectos reales. Actualmente desarrollo un chat nutricional con LangGraph y NestJS que se integrará a mi e-commerce OhMyBox, aprendiendo no solo a usar herramientas de IA, sino a implementarlas desde cero.
+			Implementar IA en producción: desarrollo un chat nutricional con LangGraph y NestJS para OhMyBox. La idea es construir la solución de punta a punta, entendiendo la arquitectura completa, no solo consumir APIs.
+		</p>
+		<p class="text-base md:text-lg font-normal text-gray-500 dark:text-gray-400 text-pretty max-w-3xl lg:max-w-5xl xl:max-w-6xl leading-relaxed mt-4">
+			Además, estoy finalizando la Tecnicatura superior en Desarrollo de Software en el institulo "Teclab".
 		</p>
 	</div>
 </article>
@@ -130,7 +133,7 @@
 		(entries) => {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
-					entry.target.style.opacity = '1';
+					(entry.target as HTMLElement).style.opacity = '1';
 					observer.unobserve(entry.target);
 				}
 			});
@@ -143,7 +146,7 @@
 	);
 
 	document.addEventListener('DOMContentLoaded', () => {
-		const currentWork = document.querySelector('.current-work-container');
+		const currentWork = document.querySelector('.current-work-container') as HTMLElement;
 		if (currentWork) {
 			observer.observe(currentWork);
 		}

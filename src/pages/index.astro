@@ -45,10 +45,12 @@ description="Bienvenidos a mi porfolio, soy Juan Pablo Riglos, Frontend develope
 
 	<SectionContainer id="contact">
 		<Contact client:visible/>
-		<h2 class=" flex gap-4  mt-8 mb-4 text-gray-200/90 font-semibold text-xl text-pretty"> También puedes encontrarme 
-			<PersonsIcon/> 
-		</h2>
-		<SocialPillsSecction/>
+		<div class="social-section-wrapper">
+			<h2 class="social-section-title"> También puedes encontrarme
+				<PersonsIcon/>
+			</h2>
+			<SocialPillsSecction/>
+		</div>
 	</SectionContainer>
 	
 
@@ -56,5 +58,50 @@ description="Bienvenidos a mi porfolio, soy Juan Pablo Riglos, Frontend develope
 </Layout>
 
 <style>
+/* Social Pills Section */
+.social-section-wrapper {
+	margin-top: 4rem;
+	padding-top: 3rem;
+	border-top: 1px solid rgba(75, 85, 99, 0.2);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
+}
 
+.social-section-title {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	text-align: center;
+	color: rgba(229, 231, 235, 0.9);
+	font-weight: 600;
+	font-size: 1.25rem;
+	margin: 0;
+	text-wrap: balance;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.social-section-wrapper {
+		margin-top: 3rem;
+		padding-top: 2rem;
+		gap: 1.5rem;
+	}
+
+	.social-section-title {
+		font-size: 1.125rem;
+	}
+}
+
+@media (max-width: 640px) {
+	.social-section-wrapper {
+		margin-top: 2.5rem;
+		padding-top: 1.5rem;
+	}
+
+	.social-section-title {
+		font-size: 1rem;
+	}
+}
 </style>

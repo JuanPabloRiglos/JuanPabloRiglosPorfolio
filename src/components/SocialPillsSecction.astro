@@ -5,25 +5,25 @@ import GmailIcon from "../icons/SocialIcons/GmailIcon.astro";
 import FileDownload from "../icons/FileDownload.astro";
 ---
 <nav class="mx-auto flex gap-4 justify-around flex-wrap text-gray-200/90 social-pills-container">
-    <div class="social-pill size-auto pl-2 rounded-xl bg-gray-700/30 opacity-55 flex items-center justify-between overflow-hidden gap-3 transition-all duration-300" style="animation-delay: 0s;">
-        <a href="https://github.com/JuanPabloRiglos" target="_blank" class="pill-content">Github</a>
+    <a href="https://github.com/JuanPabloRiglos" target="_blank" rel="noopener noreferrer" class="social-pill size-auto pl-2 rounded-xl bg-gray-700/30 opacity-55 flex items-center justify-between overflow-hidden gap-3 transition-all duration-300" style="animation-delay: 0s;">
+        <span class="pill-content">Github</span>
         <div class="icon-wrapper"><GithubIcon class="size-6 social-icon"/></div>
-    </div>
+    </a>
 
-    <div class="social-pill size-auto pl-2 rounded-xl bg-gray-700/30 opacity-55 flex items-center justify-between overflow-hidden gap-3 transition-all duration-300" style="animation-delay: 0.1s;">
-        <a href="https://www.linkedin.com/in/juanpabloriglos/" target="_blank" class="pill-content">Linkedin</a>
+    <a href="https://www.linkedin.com/in/juanpabloriglos/" target="_blank" rel="noopener noreferrer" class="social-pill size-auto pl-2 rounded-xl bg-gray-700/30 opacity-55 flex items-center justify-between overflow-hidden gap-3 transition-all duration-300" style="animation-delay: 0.1s;">
+        <span class="pill-content">Linkedin</span>
         <div class="icon-wrapper"><LinkedInIcon class="size-6 rounded-xl social-icon"/></div>
-    </div>
+    </a>
 
     <div class="social-pill email-pill size-auto pl-2 rounded-xl bg-gray-700/30 opacity-55 flex items-center justify-between overflow-hidden gap-3 transition-all duration-300" style="animation-delay: 0.2s;">
         <span class="pill-content">juanpabloriglos@gmail.com</span>
         <div class="icon-wrapper"><GmailIcon class="size-6 rounded-xl social-icon"/></div>
     </div>
 
-    <div class="social-pill size-auto pl-2 rounded-xl bg-gray-700/30 opacity-55 flex items-center justify-between overflow-hidden gap-3 hover:cursor-pointer transition-all duration-300" style="animation-delay: 0.3s;">
-        <a class="flex pill-content" href="/pdf/JuanPabloRiglos-Mayo24.pdf" target="_blank" rel="noopener noreferrer">Descarga CV</a>
+    <a href="/pdf/cv-Software-JuanPabloRiglos.pdf" target="_blank" rel="noopener noreferrer" class="social-pill size-auto pl-2 rounded-xl bg-gray-700/30 opacity-55 flex items-center justify-between overflow-hidden gap-3 transition-all duration-300" style="animation-delay: 0.3s;">
+        <span class="pill-content">Descarga CV</span>
         <div class="icon-wrapper"><FileDownload class="size-6 rounded-xl text-orange-300 social-icon download-icon"/></div>
-    </div>
+    </a>
 </nav>
 
 
@@ -173,11 +173,14 @@ import FileDownload from "../icons/FileDownload.astro";
                 const email = 'juanpabloriglos@gmail.com';
                 navigator.clipboard.writeText(email).then(() => {
                     // Feedback visual
-                    const originalText = emailPill.querySelector('.pill-content').textContent;
-                    emailPill.querySelector('.pill-content').textContent = '✓ Copiado!';
-                    setTimeout(() => {
-                        emailPill.querySelector('.pill-content').textContent = originalText;
-                    }, 2000);
+                    const pillContent = emailPill.querySelector('.pill-content');
+                    if (pillContent) {
+                        const originalText = pillContent.textContent;
+                        pillContent.textContent = '✓ Copiado!';
+                        setTimeout(() => {
+                            pillContent.textContent = originalText;
+                        }, 2000);
+                    }
                 });
             });
         }

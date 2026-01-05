@@ -123,9 +123,9 @@ const projects = [
     id: 3,
     title: 'InnovateProWeb',
     description:
-      'Página web de 3 secciones, totalmente responsiva, con interacción y posibilidad de contactar con los representantes de la misma por medio de WhatsApp.',
+      'Página web de 5 secciones, totalmente responsiva, con interacción y posibilidad de contactar con los representantes de la misma por medio de WhatsApp.',
     bigDescription:
-      'InnovateProWeb es una startup que lleva algún tiempo en el mercado y de la cual no hace mucho que formo parte. Dentro de la misma surgió la necesidad de crear una página a los fines de poder mostrar un poco más los proyectos realizados y las opciones de planes y de contactos. El proyecto en este caso es una página web de 3 secciones, totalmente responsiva, con interacción y posibilidad de contactar con los representantes de la misma por medio de WhatsApp.',
+      'InnovateProWeb es una startup que lleva algún tiempo en el mercado y de la cual no hace mucho que formo parte. Dentro de la misma surgió la necesidad de crear una página a los fines de poder mostrar un poco más los proyectos realizados y las opciones de planes y de contactos. El proyecto en este caso es una página web de 5 secciones, totalmente responsiva, con interacción y posibilidad de contactar con los representantes de la misma por medio de WhatsApp.',
     link: 'https://newtestinnovateproweb.netlify.app/',
     github: 'https://github.com/JuanPabloRiglos/InnoveProWebSite',
     tags: ['ReactJSIcon', 'ViteIcon', 'ReactRouterIcon', 'TailwindIcon'],

@@ -25,7 +25,7 @@
                     </div>
                     <time class="time-period">Desde octubre 2025</time>
                     <p class="description">
-                        Desarrollo y mantengo el e-commerce de mi emprendimiento personal de alimentos, implementado con Claude Code. Si bien en este caso la IA genero el código, el proceso requiere dirigir el proyecto, tomar decisiones técnicas y aplicar conocimientos de arquitectura, flujo de datos y buenas prácticas. Esta experiencia me puso en un rol de gestor de proyecto el cual me ubica en un aprendizaje constante y me transforma en un programador mas completo.
+                        Desarrollo y mantengo OhMyBox, mi e-commerce de alimentos proteicos en producción. Uso Claude Code como herramienta de desarrollo, pero el proyecto requiere gestión completa: arquitectura, decisiones técnicas, flujo de datos y buenas prácticas. Stack: Next.js, PostgreSQL, Prisma, desplegado en Vercel.
                     </p>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                     </div>
                     <time class="time-period">Abril 2024 - Abril 2025</time>
                     <p class="description">
-                        Me desempeño en una pequeña startup que tiene como objetivo principal el lograr soluciones digitales viables y eficientes a los fines de hacer crecer los distintos emprendimientos y empresas de los sus clientes.
+                        Frontend Team Leader en una startup enfocada en desarrollo web para PyMEs. Lideré proyectos frontend con React y coordiné un equipo pequeño para entregar soluciones digitales a clientes.
                     </p>
                 </div>
             </div>
@@ -73,9 +73,7 @@
                     </div>
                     <time class="time-period">Febrero 2024 - Abril 2024</time>
                     <p class="description">
-                        El ciclo se basa en simulaciones laborales grupales, destinadas a ganar experiencia trabajando en un entorno que pretende acercarse al trabajo realizado en una empresa IT. En las mismas adquirí y elevé las famosas habilidades blandas.
-                        <br><br>
-                        Asimismo, conocí lo que implica trabajar con los distintos sectores que hay detrás del desarrollo de un proyecto para lograr un producto satisfactorio.
+                        Simulaciones laborales colaborativas para ganar experiencia en entornos de trabajo IT reales. Trabajé con equipos multidisciplinarios (UX/UI, QA, Backend, Frontend) en proyectos como Querida Alergia y MedConnect.
                     </p>
                 </div>
             </div>
@@ -102,7 +100,7 @@
                     </div>
                     <time class="time-period">Desde noviembre 2023</time>
                     <p class="description">
-                        Comencé con pequeños proyectos familiares, y aplicaciones a los fines de continuar aprendiendo mientras afrontaba los distintos cursos. Hoy en día, el tiempo y la experiencia me trajeron a una posición donde me siento mucho más cómodo a la hora de decidir las tecnologías a utilizar según como se adapten al tamaño y modelo de negocio requerido.
+                        Desarrollo web freelance para clientes particulares y pequeños negocios. Proyectos variados desde landing pages hasta aplicaciones web, trabajando principalmente con React, Next.js y Astro.
                     </p>
                 </div>
             </div>
@@ -442,9 +440,10 @@
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 const index = entry.target.getAttribute('data-index');
+                const delay = index ? parseInt(index) * 150 : 0;
                 setTimeout(() => {
                     entry.target.classList.add('visible');
-                }, parseInt(index) * 150);
+                }, delay);
                 observer.unobserve(entry.target);
             }
         });
