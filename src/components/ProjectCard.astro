@@ -18,118 +18,301 @@ import PrismaIcon from "../icons/TecnologiesIcons/PrismaIcon.astro";
 import AstroIcon from "../icons/TecnologiesIcons/AstroIcon.astro";
 
 ---
-<div class="project-card border-gray-300 mb-4 rounded-xl
-w-full flex flex-col p-2
-sm:w-4/5 sm:mx-auto
-lg:w-full lg:mb-6
-opacity-0 translate-y-4">
-<main class="rounded-xl flex flex-col gap-2 md:w-full md:flex md:flex-row md:gap-4">
-    <div class="image-container relative overflow-hidden rounded-xl md:w-1/2">
-        <img class="project-image rounded-xl w-full h-full object-cover transition-transform duration-500"
-             src={project?.img}
-             alt={`Imagen del proyecto ${project?.title}`}>
-        <div class="image-overlay absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent opacity-0 transition-opacity duration-500"></div>
+
+<article class="project-card-hero">
+    <div class="card-image-container">
+        <img
+            src={project?.img}
+            alt={`Imagen del proyecto ${project?.title}`}
+            class="card-background-image"
+        />
+        <div class="image-overlay"></div>
     </div>
-    <section class="md:w-1/2 flex flex-col justify-around items-center gap-2">
-        <h2 class="mb-8 text-orange-500 md:mt-2 font-semibold text-xl text-pretty">{project?.title}</h2>
-        <div class="tech-stack sm:w-[90%] m-auto pl-2 flex items-center flex-wrap md:flex-col
-        border border-gray-600/50 p-2 rounded-xl bg-slate-200/80 backdrop-blur-sm transition-all duration-300">
-            <h3 class="text-gray-900 font-semibold text-sm">Tecnologías utilizadas</h3>
-            <article class="flex gap-2 p-2 flex-wrap justify-center">
 
-                { project.tags.includes("ReactJSIcon") && <div class="tech-icon"><ReactJSIcon class="size-6" /></div>}
-                { project.tags.includes("JavascriptIcon") && <div class="tech-icon"><JavascriptIcon class="size-6" /></div>}
-                { project.tags.includes("MongoIcon") && <div class="tech-icon"><MongoIcon class="size-6" /></div>}
-                { project.tags.includes("ReactQueryIcon") && <div class="tech-icon"><ReactQueryIcon class="size-6" /></div>}
-                { project.tags.includes("ReactRouterIcon") && <div class="tech-icon"><ReactRouterIcon class="size-6" /></div>}
-
-                { project.tags.includes("NextJSIcon") && <div class="tech-icon"><NextIcon class="size-6" /></div>}
-                { project.tags.includes("TypescriptIcon") && <div class="tech-icon"><TypescriptIcon class="size-6" /></div>}
-                { project.tags.includes("PostgresIcon") && <div class="tech-icon"><PostegresIcon class="size-6" /></div>}
-                { project.tags.includes("PrismaIcon") && <div class="tech-icon"><PrismaIcon class="size-6" /></div>}
-                { project.tags.includes("AstroIcon") && <div class="tech-icon"><AstroIcon class="size-6" /></div>}
-
-                { project.tags.includes("StyleComponentsIcon") && <div class="tech-icon"><StyleComponentsIcon class="size-6" /></div>}
-                { project.tags.includes("TailwindIcon") && <div class="tech-icon"><TailwindIcon class="size-6" /></div>}
-                { project.tags.includes("ViteIcon") && <div class="tech-icon"><ViteIcon class="size-6" /></div>}
-
-            </article>
-
+    <div class="card-content">
+        <!-- Header siempre visible -->
+        <div class="card-header">
+            <h3 class="project-title">{project?.title}</h3>
+            <p class="project-subtitle">{project?.subtitle}</p>
         </div>
-        <a target="_blank"
-           href={project.link.length > 0 ? project.link : project.github}
-           class="cta-button relative inline-flex items-center justify-center px-6 py-3 overflow-hidden text-sm font-medium text-orange-500 rounded-lg group transition-all duration-300">
-            <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg group-hover:w-full group-hover:h-full opacity-0 group-hover:opacity-100"></span>
-            <span class="relative transition-colors duration-300 group-hover:text-white">Conocer más</span>
-        </a>
-    </section>
-</main>
-    <article class="p-2 md:p-4 m-auto">
-        <h4 class="text-pretty my-2 text-orange-300 font-medium">{project?.subtitle}</h4>
-        <hr class="border-gray-700/50 my-3">
-        <p class="text-pretty m-2 text-gray-200/90 leading-relaxed">{project?.description}</p>
-    </article>
-</div>
+
+        <!-- Tech stack siempre visible -->
+        <div class="tech-badges">
+            { project.tags.includes("ReactJSIcon") && <div class="tech-badge" title="React"><ReactJSIcon class="size-5" /></div>}
+            { project.tags.includes("JavascriptIcon") && <div class="tech-badge" title="JavaScript"><JavascriptIcon class="size-5" /></div>}
+            { project.tags.includes("MongoIcon") && <div class="tech-badge" title="MongoDB"><MongoIcon class="size-5" /></div>}
+            { project.tags.includes("ReactQueryIcon") && <div class="tech-badge" title="React Query"><ReactQueryIcon class="size-5" /></div>}
+            { project.tags.includes("ReactRouterIcon") && <div class="tech-badge" title="React Router"><ReactRouterIcon class="size-5" /></div>}
+            { project.tags.includes("NextJSIcon") && <div class="tech-badge" title="Next.js"><NextIcon class="size-5" /></div>}
+            { project.tags.includes("TypescriptIcon") && <div class="tech-badge" title="TypeScript"><TypescriptIcon class="size-5" /></div>}
+            { project.tags.includes("PostgresIcon") && <div class="tech-badge" title="PostgreSQL"><PostegresIcon class="size-5" /></div>}
+            { project.tags.includes("PrismaIcon") && <div class="tech-badge" title="Prisma"><PrismaIcon class="size-5" /></div>}
+            { project.tags.includes("AstroIcon") && <div class="tech-badge" title="Astro"><AstroIcon class="size-5" /></div>}
+            { project.tags.includes("StyleComponentsIcon") && <div class="tech-badge" title="Styled Components"><StyleComponentsIcon class="size-5" /></div>}
+            { project.tags.includes("TailwindIcon") && <div class="tech-badge" title="Tailwind CSS"><TailwindIcon class="size-5" /></div>}
+            { project.tags.includes("ViteIcon") && <div class="tech-badge" title="Vite"><ViteIcon class="size-5" /></div>}
+        </div>
+
+        <!-- Contenido expandible en hover -->
+        <div class="expandable-content">
+            <div class="divider"></div>
+            <p class="project-description">{project?.description}</p>
+            <a
+                href={project.link.length > 0 ? project.link : project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cta-link"
+            >
+                <span class="cta-text">Ver proyecto</span>
+                <svg class="cta-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- Badge de número (opcional decorativo) -->
+    <div class="card-number">#{project?.id}</div>
+</article>
 
 <style>
-.project-card {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-                0 2px 4px -1px rgba(0, 0, 0, 0.06),
-                0 0 0 1px rgba(255, 255, 255, 0.05);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    background: rgba(31, 41, 55, 0.3);
-    backdrop-filter: blur(10px);
+.project-card-hero {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(20px);
+    border: 1px solid rgba(75, 85, 99, 0.2);
+    background: rgba(17, 24, 39, 0.4);
 }
 
-.project-card:hover {
-    transform: translateY(-4px) scale(1.01);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2),
-                0 10px 10px -5px rgba(0, 0, 0, 0.04),
-                0 0 0 1px rgba(255, 255, 255, 0.1);
-    background: rgba(55, 65, 81, 0.4);
+/* Imagen de fondo */
+.card-image-container {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
 }
 
-.image-container:hover .image-overlay {
+.card-background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: brightness(0.7) saturate(1.1);
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(17, 24, 39, 0.98) 0%,
+        rgba(17, 24, 39, 0.85) 30%,
+        rgba(17, 24, 39, 0.4) 60%,
+        rgba(17, 24, 39, 0.2) 100%
+    );
+    transition: background 0.5s ease;
+}
+
+/* Contenido superpuesto */
+.card-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    gap: 1rem;
+}
+
+/* Header */
+.card-header {
+    transition: transform 0.4s ease;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(249, 115, 22);
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.project-subtitle {
+    font-size: 0.875rem;
+    color: rgba(209, 213, 219, 0.9);
+    margin: 0;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* Tech badges */
+.tech-badges {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    transition: transform 0.4s ease;
+}
+
+.tech-badge {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background: rgba(31, 41, 55, 0.8);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech-badge:hover {
+    transform: translateY(-2px);
+    border-color: rgba(249, 115, 22, 0.6);
+    background: rgba(31, 41, 55, 0.95);
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+}
+
+/* Contenido expandible */
+.expandable-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(249, 115, 22, 0.5),
+        transparent
+    );
+}
+
+.project-description {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: rgba(209, 213, 219, 0.85);
+    margin: 0;
+}
+
+.cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    align-self: flex-start;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(168, 85, 247, 0.2));
+    border: 1px solid rgba(249, 115, 22, 0.4);
+    border-radius: 0.5rem;
+    color: rgb(251, 146, 60);
+    font-weight: 500;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+
+.cta-link:hover {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.4), rgba(168, 85, 247, 0.4));
+    border-color: rgba(249, 115, 22, 0.7);
+    transform: translateX(4px);
+    box-shadow: 0 4px 16px rgba(249, 115, 22, 0.3);
+}
+
+.cta-arrow {
+    width: 1rem;
+    height: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.cta-link:hover .cta-arrow {
+    transform: translateX(4px);
+}
+
+/* Badge de número */
+.card-number {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 3;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: rgba(17, 24, 39, 0.8);
+    border: 1px solid rgba(249, 115, 22, 0.4);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: rgba(249, 115, 22, 0.9);
+    transition: all 0.3s ease;
+}
+
+/* Hover states */
+.project-card-hero:hover {
+    transform: translateY(-8px);
+    border-color: rgba(249, 115, 22, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+                0 0 60px rgba(249, 115, 22, 0.15);
+}
+
+.project-card-hero:hover .card-background-image {
+    transform: scale(1.1);
+    filter: brightness(0.5) saturate(1.2);
+}
+
+.project-card-hero:hover .image-overlay {
+    background: linear-gradient(
+        to top,
+        rgba(17, 24, 39, 0.98) 0%,
+        rgba(17, 24, 39, 0.95) 50%,
+        rgba(17, 24, 39, 0.7) 100%
+    );
+}
+
+.project-card-hero:hover .card-header {
+    transform: translateY(-8px);
+}
+
+.project-card-hero:hover .tech-badges {
+    transform: translateY(-8px);
+}
+
+.project-card-hero:hover .expandable-content {
+    max-height: 300px;
     opacity: 1;
 }
 
-.image-container:hover .project-image {
-    transform: scale(1.05);
-}
-
-.tech-icon {
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.tech-icon:hover {
-    transform: translateY(-2px) scale(1.1);
-}
-
-.tech-stack:hover {
-    border-color: rgba(249, 115, 22, 0.3);
-    box-shadow: 0 0 20px rgba(249, 115, 22, 0.1);
-}
-
-.cta-button {
-    border: 1px solid rgba(249, 115, 22, 0.3);
-    background: rgba(17, 24, 39, 0.6);
-}
-
-.cta-button:hover {
-    border-color: transparent;
-    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+.project-card-hero:hover .card-number {
+    transform: scale(1.1) rotate(5deg);
+    border-color: rgba(249, 115, 22, 0.7);
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
 }
 
 /* Animación de entrada */
-.project-card.visible {
+.project-card-hero.visible {
     animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
@@ -137,10 +320,43 @@ opacity-0 translate-y-4">
     }
 }
 
-/* Responsive adjustments */
+/* Responsive */
 @media (max-width: 768px) {
-    .project-card:hover {
-        transform: translateY(-2px) scale(1.005);
+    .project-card-hero {
+        height: 380px;
+    }
+
+    .project-title {
+        font-size: 1.25rem;
+    }
+
+    .card-content {
+        padding: 1.25rem;
+    }
+
+    .project-card-hero:hover {
+        transform: translateY(-4px);
+    }
+
+    .project-card-hero:hover .card-header,
+    .project-card-hero:hover .tech-badges {
+        transform: translateY(-4px);
+    }
+}
+
+@media (max-width: 640px) {
+    .project-card-hero {
+        height: 360px;
+    }
+
+    .tech-badge {
+        padding: 0.4rem;
+    }
+
+    .card-number {
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.75rem;
     }
 }
 </style>
@@ -165,7 +381,7 @@ opacity-0 translate-y-4">
     }, observerOptions);
 
     document.addEventListener('DOMContentLoaded', () => {
-        const cards = document.querySelectorAll('.project-card');
+        const cards = document.querySelectorAll('.project-card-hero');
         cards.forEach(card => observer.observe(card));
     });
 </script>
