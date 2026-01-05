@@ -2,11 +2,150 @@
 // Componente para mostrar el trabajo actual
 ---
 
-<article class="space-y-4">
-	<h2 class="text-gray-200/90 font-bold text-2xl md:text-3xl text-pretty">
-		Enfoque actual
-	</h2>
-	<p class="text-base md:text-lg font-normal text-gray-500 dark:text-gray-400 text-pretty max-w-3xl lg:max-w-5xl xl:max-w-6xl leading-relaxed">
-		Estoy cursando el último año de la Tecnicatura en Desarrollo de Software en Teclab, consolidando bases teóricas que complementan mi experiencia práctica. En paralelo, estoy orientando mi perfil hacia la implementación de inteligencia artificial en proyectos reales. Actualmente desarrollo un chat nutricional con LangGraph y NestJS que se integrará a mi e-commerce OhMyBox, aprendiendo no solo a usar herramientas de IA, sino a implementarlas desde cero.
-	</p>
+<article class="current-work-container space-y-4 opacity-0">
+	<div class="title-badge-wrapper flex items-center gap-3">
+		<h2 class="text-gray-200/90 font-bold text-2xl md:text-3xl text-pretty">
+			Enfoque actual
+		</h2>
+		<span class="current-badge-icon">
+			<svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+				<circle cx="10" cy="10" r="8" opacity="0.3"/>
+				<circle cx="10" cy="10" r="4" class="pulse-circle"/>
+			</svg>
+		</span>
+	</div>
+	<div class="content-wrapper">
+		<p class="text-base md:text-lg font-normal text-gray-500 dark:text-gray-400 text-pretty max-w-3xl lg:max-w-5xl xl:max-w-6xl leading-relaxed">
+			Estoy cursando el último año de la Tecnicatura en Desarrollo de Software en Teclab, consolidando bases teóricas que complementan mi experiencia práctica. En paralelo, estoy orientando mi perfil hacia la implementación de inteligencia artificial en proyectos reales. Actualmente desarrollo un chat nutricional con LangGraph y NestJS que se integrará a mi e-commerce OhMyBox, aprendiendo no solo a usar herramientas de IA, sino a implementarlas desde cero.
+		</p>
+	</div>
 </article>
+
+<style>
+.current-work-container {
+	position: relative;
+	padding: 1.5rem;
+	border-radius: 1rem;
+	background: linear-gradient(
+		135deg,
+		rgba(31, 41, 55, 0.2) 0%,
+		rgba(17, 24, 39, 0.3) 100%
+	);
+	border: 1px solid rgba(249, 115, 22, 0.1);
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.current-work-container::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border-radius: 1rem;
+	padding: 1px;
+	background: linear-gradient(
+		135deg,
+		transparent,
+		rgba(249, 115, 22, 0.3),
+		transparent
+	);
+	-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	-webkit-mask-composite: xor;
+	mask-composite: exclude;
+	opacity: 0;
+	transition: opacity 0.4s ease;
+}
+
+.current-work-container:hover {
+	background: linear-gradient(
+		135deg,
+		rgba(31, 41, 55, 0.35) 0%,
+		rgba(17, 24, 39, 0.45) 100%
+	);
+	border-color: rgba(249, 115, 22, 0.2);
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2),
+	            0 0 40px rgba(249, 115, 22, 0.1);
+}
+
+.current-work-container:hover::before {
+	opacity: 1;
+}
+
+.title-badge-wrapper {
+	position: relative;
+}
+
+.current-badge-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.pulse-circle {
+	animation: pulse-grow 2s ease-in-out infinite;
+	transform-origin: center;
+}
+
+.content-wrapper {
+	position: relative;
+	z-index: 1;
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes pulse-grow {
+	0%, 100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	50% {
+		opacity: 0.5;
+		transform: scale(1.5);
+	}
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.current-work-container {
+		padding: 1rem;
+	}
+
+	.current-work-container:hover {
+		transform: none;
+	}
+}
+</style>
+
+<script>
+	// Intersection Observer para animación de entrada
+	const observer = new IntersectionObserver(
+		(entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.style.opacity = '1';
+					observer.unobserve(entry.target);
+				}
+			});
+		},
+		{
+			root: null,
+			rootMargin: '0px',
+			threshold: 0.1,
+		}
+	);
+
+	document.addEventListener('DOMContentLoaded', () => {
+		const currentWork = document.querySelector('.current-work-container');
+		if (currentWork) {
+			observer.observe(currentWork);
+		}
+	});
+</script>

@@ -1,12 +1,113 @@
 
 
 
-<header class="z-40">  
-	<h1 class=" font-bold text-3xl text-gray-200/90">Bienvenidos, soy <span class="hover:cursor-pointer hover:text-[rgb(79,158,238)]"  > <a href="https://www.linkedin.com/in/juanpabloriglos/" target="_blank" >Juan Pablo Riglos</a> 
-	</span>
-	<br> 
-	<bold class="text-orange-500">Frontend Developer</bold></h1> 
+
+<header class="z-40 hero-section">
+	<h1 class="font-bold text-3xl text-gray-200/90 hero-title">
+		<span class="hero-line" style="animation-delay: 0s;">Bienvenidos, soy </span>
+		<span class="hero-name hover:cursor-pointer" style="animation-delay: 0.2s;">
+			<a href="https://www.linkedin.com/in/juanpabloriglos/" target="_blank" class="name-link">
+				Juan Pablo Riglos
+			</a>
+		</span>
+		<br>
+		<span class="hero-role" style="animation-delay: 0.4s;">Frontend Developer</span>
+	</h1>
 </header>
-<article>
-	<h2 class=" font-semibold text-lg text-pretty text-gray-200/90"> Argentino 🇦🇷 <span class="text-orange-400">con más de 3 años</span> metiendo los dedos en el teclado, en busca del constante crecimiento y con ello, lograr <span class="text-orange-400">soluciones digitales de calidad. </span></h2>
+<article class="hero-description" style="animation-delay: 0.6s;">
+	<h2 class="font-semibold text-lg text-pretty text-gray-200/90">
+		Argentino 🇦🇷 <span class="text-orange-400">con más de 3 años</span> metiendo los dedos en el teclado, en busca del constante crecimiento y con ello, lograr <span class="text-orange-400">soluciones digitales de calidad.</span>
+	</h2>
 </article>
+
+<style>
+.hero-section {
+	opacity: 0;
+	animation: fadeIn 0.8s ease-out forwards;
+}
+
+.hero-line,
+.hero-name,
+.hero-role,
+.hero-description {
+	opacity: 0;
+	animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.hero-role {
+	background: linear-gradient(90deg, #f97316 0%, #fb923c 50%, #f97316 100%);
+	background-size: 200% auto;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	animation: fadeInUp 0.8s ease-out forwards, shimmer 3s ease-in-out infinite;
+	animation-delay: 0.4s, 1s;
+	display: inline-block;
+}
+
+.name-link {
+	position: relative;
+	display: inline-block;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.name-link::after {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 2px;
+	bottom: -2px;
+	left: 50%;
+	background: linear-gradient(90deg, transparent, rgb(79, 158, 238), transparent);
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	transform: translateX(-50%);
+}
+
+.name-link:hover {
+	color: rgb(79, 158, 238);
+	transform: translateY(-1px);
+}
+
+.name-link:hover::after {
+	width: 100%;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes shimmer {
+	0% {
+		background-position: 0% center;
+	}
+	50% {
+		background-position: 100% center;
+	}
+	100% {
+		background-position: 0% center;
+	}
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.name-link:hover {
+		transform: translateY(0);
+	}
+}
+</style>

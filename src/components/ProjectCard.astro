@@ -18,60 +18,154 @@ import PrismaIcon from "../icons/TecnologiesIcons/PrismaIcon.astro";
 import AstroIcon from "../icons/TecnologiesIcons/AstroIcon.astro";
 
 ---
-<div class="principalDiv border-gray-300 mb-4 rounded-xl hover:bg-gray-700 hover:cursor-pointer
+<div class="project-card border-gray-300 mb-4 rounded-xl
 w-full flex flex-col p-2
 sm:w-4/5 sm:mx-auto
-lg:w-full lg:mb-6">
+lg:w-full lg:mb-6
+opacity-0 translate-y-4">
 <main class="rounded-xl flex flex-col gap-2 md:w-full md:flex md:flex-row md:gap-4">
-    <img  class=" rounded-xl md:w-1/2" src={project?.img} alt={`Imagen del proyecto ${project?.title}`}>
+    <div class="image-container relative overflow-hidden rounded-xl md:w-1/2">
+        <img class="project-image rounded-xl w-full h-full object-cover transition-transform duration-500"
+             src={project?.img}
+             alt={`Imagen del proyecto ${project?.title}`}>
+        <div class="image-overlay absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent opacity-0 transition-opacity duration-500"></div>
+    </div>
     <section class="md:w-1/2 flex flex-col justify-around items-center gap-2">
-        <h2 class="mb-8 text-orange-500 md:mt-2 font-semibold text-xl text-pretty text-shadow-drop-center">{project?.title}</h2>
-        <div class="sm:w-[90%] m-auto pl-2 flex items-center flex-wrap md:flex-col
-        border-2 p-2 rounded-xl bg-slate-200/80">
-            <h3 class=" text-gray-900 font-semibold">Tecnologías utilizadas </h3>
-            <article class="flex gap-2 p-2">
-                
-                { project.tags.includes("ReactJSIcon") && <ReactJSIcon class="size-6" />}
-                { project.tags.includes("JavascriptIcon") && <JavascriptIcon class="size-6" />}
-                { project.tags.includes("MongoIcon") && <MongoIcon class="size-6" />}
-                { project.tags.includes("ReactQueryIcon") && <ReactQueryIcon class="size-6" />}
-                { project.tags.includes("ReactRouterIcon") && <ReactRouterIcon class="size-6" />}
+        <h2 class="mb-8 text-orange-500 md:mt-2 font-semibold text-xl text-pretty">{project?.title}</h2>
+        <div class="tech-stack sm:w-[90%] m-auto pl-2 flex items-center flex-wrap md:flex-col
+        border border-gray-600/50 p-2 rounded-xl bg-slate-200/80 backdrop-blur-sm transition-all duration-300">
+            <h3 class="text-gray-900 font-semibold text-sm">Tecnologías utilizadas</h3>
+            <article class="flex gap-2 p-2 flex-wrap justify-center">
 
-                { project.tags.includes("NextJSIcon") && <NextIcon class="size-6" />}
-                { project.tags.includes("TypescriptIcon") && <TypescriptIcon class="size-6" />}
-                { project.tags.includes("PostgresIcon") && <PostegresIcon class="size-6" />}
-                { project.tags.includes("PrismaIcon") && <PrismaIcon class="size-6" />}
-                 { project.tags.includes("AstroIcon") && <AstroIcon class="size-6" />}
+                { project.tags.includes("ReactJSIcon") && <div class="tech-icon"><ReactJSIcon class="size-6" /></div>}
+                { project.tags.includes("JavascriptIcon") && <div class="tech-icon"><JavascriptIcon class="size-6" /></div>}
+                { project.tags.includes("MongoIcon") && <div class="tech-icon"><MongoIcon class="size-6" /></div>}
+                { project.tags.includes("ReactQueryIcon") && <div class="tech-icon"><ReactQueryIcon class="size-6" /></div>}
+                { project.tags.includes("ReactRouterIcon") && <div class="tech-icon"><ReactRouterIcon class="size-6" /></div>}
 
-                { project.tags.includes("StyleComponentsIcon") && <StyleComponentsIcon class="size-6" />}
-                { project.tags.includes("TailwindIcon") && <TailwindIcon class="size-6" />}
-                { project.tags.includes("ViteIcon") && <ViteIcon class="size-6" />}
-  
+                { project.tags.includes("NextJSIcon") && <div class="tech-icon"><NextIcon class="size-6" /></div>}
+                { project.tags.includes("TypescriptIcon") && <div class="tech-icon"><TypescriptIcon class="size-6" /></div>}
+                { project.tags.includes("PostgresIcon") && <div class="tech-icon"><PostegresIcon class="size-6" /></div>}
+                { project.tags.includes("PrismaIcon") && <div class="tech-icon"><PrismaIcon class="size-6" /></div>}
+                { project.tags.includes("AstroIcon") && <div class="tech-icon"><AstroIcon class="size-6" /></div>}
+
+                { project.tags.includes("StyleComponentsIcon") && <div class="tech-icon"><StyleComponentsIcon class="size-6" /></div>}
+                { project.tags.includes("TailwindIcon") && <div class="tech-icon"><TailwindIcon class="size-6" /></div>}
+                { project.tags.includes("ViteIcon") && <div class="tech-icon"><ViteIcon class="size-6" /></div>}
+
             </article>
-         
+
         </div>
-        <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-orange-500 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-purple-800">
-            <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                <!-- <a href={`/project/${project.id}`}>        Conoce más de este proyecto</a> -->
-   <a target="_blank" href={project.link.length > 0 ? project.link : project.github}> Conocer más </a>
-            </span>
-        </button>
+        <a target="_blank"
+           href={project.link.length > 0 ? project.link : project.github}
+           class="cta-button relative inline-flex items-center justify-center px-6 py-3 overflow-hidden text-sm font-medium text-orange-500 rounded-lg group transition-all duration-300">
+            <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg group-hover:w-full group-hover:h-full opacity-0 group-hover:opacity-100"></span>
+            <span class="relative transition-colors duration-300 group-hover:text-white">Conocer más</span>
+        </a>
     </section>
 </main>
-    <article class=" p-2 md:p-4 m-auto">
-        <h4 class="text-pretty my-2 text-orange-300">{project?.subtitle}</h4>
-        <hr>
-        <p class="text-pretty m-2 text-gray-200/90">{project?.description}</p>
+    <article class="p-2 md:p-4 m-auto">
+        <h4 class="text-pretty my-2 text-orange-300 font-medium">{project?.subtitle}</h4>
+        <hr class="border-gray-700/50 my-3">
+        <p class="text-pretty m-2 text-gray-200/90 leading-relaxed">{project?.description}</p>
     </article>
 </div>
 
 <style>
-.principalDiv{
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+.project-card {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                0 2px 4px -1px rgba(0, 0, 0, 0.06),
+                0 0 0 1px rgba(255, 255, 255, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(31, 41, 55, 0.3);
+    backdrop-filter: blur(10px);
 }
 
-.text-shadow-drop-center {
-	-webkit-animation: text-shadow-drop-center 0.6s both;
-	        animation: text-shadow-drop-center 0.6s both;
+.project-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+    background: rgba(55, 65, 81, 0.4);
+}
+
+.image-container:hover .image-overlay {
+    opacity: 1;
+}
+
+.image-container:hover .project-image {
+    transform: scale(1.05);
+}
+
+.tech-icon {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.tech-icon:hover {
+    transform: translateY(-2px) scale(1.1);
+}
+
+.tech-stack:hover {
+    border-color: rgba(249, 115, 22, 0.3);
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.1);
+}
+
+.cta-button {
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    background: rgba(17, 24, 39, 0.6);
+}
+
+.cta-button:hover {
+    border-color: transparent;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+}
+
+/* Animación de entrada */
+.project-card.visible {
+    animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .project-card:hover {
+        transform: translateY(-2px) scale(1.005);
+    }
 }
 </style>
+
+<script>
+    // Intersection Observer para animación de entrada
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 100);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const cards = document.querySelectorAll('.project-card');
+        cards.forEach(card => observer.observe(card));
+    });
+</script>

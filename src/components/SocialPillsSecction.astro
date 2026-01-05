@@ -4,18 +4,182 @@ import GithubIcon from "../icons/SocialIcons/GithubIcon.astro";
 import GmailIcon from "../icons/SocialIcons/GmailIcon.astro";
 import FileDownload from "../icons/FileDownload.astro";
 ---
-<nav class=" mx-auto flex gap-4 justify-around flex-wrap text-gray-200/90">
-    <div class="pillShadow size-auto pl-2 rounded-xl bg-gray-700/30 opacity-55 flex items-center justify-between overflow-hidden gap-3 hover:text-gray-100 hover:opacity-90"> <a href="https://github.com/JuanPabloRiglos" target="_blank">Github </a> <GithubIcon class="size-6"/> </div>
-    <div class="pillShadow size-auto pl-2 rounded-xl bg-gray-700/30 opacity-55 flex items-center justify-between overflow-hidden gap-3  hover:text-gray-100 hover:opacity-90"> <a href="https://www.linkedin.com/in/juanpabloriglos/" target="_blank"> Linkedin </a><LinkedInIcon class="size-6 rounded-xl"/> </div>
-    <div class="pillShadow size-auto pl-2 rounded-xl bg-gray-700/30 opacity-55 flex items-center justify-between overflow-hidden gap-3  hover:text-gray-100 hover:opacity-90">juanpabloriglos@gmail.com <GmailIcon class="size-6 rounded-xl"/> </div>
-    <div class="pillShadow size-auto pl-2 rounded-xl bg-gray-700/30 opacity-55 flex items-center justify-between overflow-hidden gap-3  hover:text-gray-100 hover:opacity-90 hover:cursor-pointer">
-        <a class="flex" href="/pdf/JuanPabloRiglos-Mayo24.pdf" target="_blank" rel="noopener noreferrer">  Descarga CV </a><FileDownload class="size-6 rounded-xl  text-orange-300"/>
-        </div>
+<nav class="mx-auto flex gap-4 justify-around flex-wrap text-gray-200/90 social-pills-container">
+    <div class="social-pill size-auto pl-2 rounded-xl bg-gray-700/30 opacity-55 flex items-center justify-between overflow-hidden gap-3 transition-all duration-300" style="animation-delay: 0s;">
+        <a href="https://github.com/JuanPabloRiglos" target="_blank" class="pill-content">Github</a>
+        <div class="icon-wrapper"><GithubIcon class="size-6 social-icon"/></div>
+    </div>
+
+    <div class="social-pill size-auto pl-2 rounded-xl bg-gray-700/30 opacity-55 flex items-center justify-between overflow-hidden gap-3 transition-all duration-300" style="animation-delay: 0.1s;">
+        <a href="https://www.linkedin.com/in/juanpabloriglos/" target="_blank" class="pill-content">Linkedin</a>
+        <div class="icon-wrapper"><LinkedInIcon class="size-6 rounded-xl social-icon"/></div>
+    </div>
+
+    <div class="social-pill email-pill size-auto pl-2 rounded-xl bg-gray-700/30 opacity-55 flex items-center justify-between overflow-hidden gap-3 transition-all duration-300" style="animation-delay: 0.2s;">
+        <span class="pill-content">juanpabloriglos@gmail.com</span>
+        <div class="icon-wrapper"><GmailIcon class="size-6 rounded-xl social-icon"/></div>
+    </div>
+
+    <div class="social-pill size-auto pl-2 rounded-xl bg-gray-700/30 opacity-55 flex items-center justify-between overflow-hidden gap-3 hover:cursor-pointer transition-all duration-300" style="animation-delay: 0.3s;">
+        <a class="flex pill-content" href="/pdf/JuanPabloRiglos-Mayo24.pdf" target="_blank" rel="noopener noreferrer">Descarga CV</a>
+        <div class="icon-wrapper"><FileDownload class="size-6 rounded-xl text-orange-300 social-icon download-icon"/></div>
+    </div>
 </nav>
 
 
 <style>
-    .pillShadow:hover{
-box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+.social-pills-container {
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+.social-pill {
+    position: relative;
+    overflow: visible;
+    padding: 8px 12px;
+}
+
+.social-pill::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 0.75rem;
+    padding: 1px;
+    background: linear-gradient(135deg, transparent, rgba(249, 115, 22, 0.3), transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.social-pill:hover {
+    opacity: 1 !important;
+    background: rgba(55, 65, 81, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.2);
+}
+
+.social-pill:hover::before {
+    opacity: 1;
+}
+
+.pill-content {
+    transition: color 0.3s ease;
+}
+
+.social-pill:hover .pill-content {
+    color: rgb(251, 146, 60);
+}
+
+.icon-wrapper {
+    transition: transform 0.3s ease;
+}
+
+.social-pill:hover .social-icon {
+    animation: iconBounce 0.5s ease;
+}
+
+.download-icon {
+    transition: transform 0.3s ease;
+}
+
+.social-pill:hover .download-icon {
+    animation: downloadPulse 0.6s ease;
+}
+
+/* Email pill con efecto especial de copiado */
+.email-pill {
+    cursor: pointer;
+    position: relative;
+}
+
+.email-pill:active {
+    transform: scale(0.98);
+}
+
+/* Ripple effect */
+.social-pill::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(249, 115, 22, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.social-pill:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+@keyframes iconBounce {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-4px) rotate(-5deg);
+    }
+    75% {
+        transform: translateY(-2px) rotate(5deg);
+    }
+}
+
+@keyframes downloadPulse {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-3px);
+    }
+    50% {
+        transform: translateY(2px);
+    }
+    75% {
+        transform: translateY(-1px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .social-pill:hover {
+        transform: translateY(-1px);
+    }
 }
 </style>
+
+<script>
+    // Copiar email al clipboard al hacer click
+    document.addEventListener('DOMContentLoaded', () => {
+        const emailPill = document.querySelector('.email-pill');
+        if (emailPill) {
+            emailPill.addEventListener('click', () => {
+                const email = 'juanpabloriglos@gmail.com';
+                navigator.clipboard.writeText(email).then(() => {
+                    // Feedback visual
+                    const originalText = emailPill.querySelector('.pill-content').textContent;
+                    emailPill.querySelector('.pill-content').textContent = '✓ Copiado!';
+                    setTimeout(() => {
+                        emailPill.querySelector('.pill-content').textContent = originalText;
+                    }, 2000);
+                });
+            });
+        }
+    });
+</script>
