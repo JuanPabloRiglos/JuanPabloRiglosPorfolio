@@ -10,6 +10,7 @@ import Layout from '../layouts/Layout.astro';
 import AboutMe from '../components/AboutMe.astro';
 import {Contact} from '../components/Contact.jsx'
 import SocialPillsSecction from '../components/SocialPillsSecction.astro';
+import CurrentWork from '../components/CurrentWork.astro';
 ---
 
 <Layout title=" Juan Pablo Riglos, Desarrollador y Programador web 🚀"
@@ -18,9 +19,12 @@ description="Bienvenidos a mi porfolio, soy Juan Pablo Riglos, Frontend develope
 	<SectionContainer id="top">
 		<Hero/>
 	</SectionContainer>
+	<SectionContainer id="current">
+		<CurrentWork/>
+	</SectionContainer>
 	<SectionContainer id="experiencia">
-		<header class="flex flex-nowrap gap-4 z-40"> 
-			<h2 class="mb-8 text-gray-200/90 font-semibold text-xl text-pretty"> Experiencia 
+		<header class="flex flex-nowrap gap-4 z-40">
+			<h2 class="mb-8 text-gray-200/90 font-semibold text-xl text-pretty"> Experiencia
 			</h2>
 			<RuteIcon class="text-gray-200/90"/>
 		</header>

@@ -11,6 +11,11 @@ import ReactRouterIcon from "../icons/TecnologiesIcons/ReactRouterIcon.astro";
 import StyleComponentsIcon from "../icons/TecnologiesIcons/StyleComponentsIcon.astro";
 import TailwindIcon from "../icons/TecnologiesIcons/TailwindIcon.astro";
 import ViteIcon from "../icons/TecnologiesIcons/ViteIcon.astro";
+import NextIcon from "../icons/TecnologiesIcons/NextIcon.astro";
+import TypescriptIcon from "../icons/TecnologiesIcons/TypescriptIcon.astro";
+import PostegresIcon from "../icons/TecnologiesIcons/PostegresIcon.astro";
+import PrismaIcon from "../icons/TecnologiesIcons/PrismaIcon.astro";
+import AstroIcon from "../icons/TecnologiesIcons/AstroIcon.astro";
 
 ---
 <div class="principalDiv border-gray-300 mb-4 rounded-xl hover:bg-gray-700 hover:cursor-pointer
@@ -31,6 +36,13 @@ lg:w-full lg:mb-6">
                 { project.tags.includes("MongoIcon") && <MongoIcon class="size-6" />}
                 { project.tags.includes("ReactQueryIcon") && <ReactQueryIcon class="size-6" />}
                 { project.tags.includes("ReactRouterIcon") && <ReactRouterIcon class="size-6" />}
+
+                { project.tags.includes("NextJSIcon") && <NextIcon class="size-6" />}
+                { project.tags.includes("TypescriptIcon") && <TypescriptIcon class="size-6" />}
+                { project.tags.includes("PostgresIcon") && <PostegresIcon class="size-6" />}
+                { project.tags.includes("PrismaIcon") && <PrismaIcon class="size-6" />}
+                 { project.tags.includes("AstroIcon") && <AstroIcon class="size-6" />}
+
                 { project.tags.includes("StyleComponentsIcon") && <StyleComponentsIcon class="size-6" />}
                 { project.tags.includes("TailwindIcon") && <TailwindIcon class="size-6" />}
                 { project.tags.includes("ViteIcon") && <ViteIcon class="size-6" />}
